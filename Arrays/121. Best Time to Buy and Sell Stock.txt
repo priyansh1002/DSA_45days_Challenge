@@ -1,0 +1,19 @@
+class Solution {
+public
+    int maxProfit(vectorint& prices) {
+        int n = prices.size();
+        if (n == 0) {
+            return 0;
+        }
+        int minstock = prices[0];
+        int maxpro = 0;
+        for (int i = 1; i  n; i++) {
+            if (minstock  prices[i]) {
+                minstock = prices[i];
+            } else {
+                maxpro = max(maxpro, prices[i] - minstock);
+            }
+        }
+        return maxpro;
+    }
+};
